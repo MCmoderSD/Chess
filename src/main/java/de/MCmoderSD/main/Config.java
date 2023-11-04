@@ -28,18 +28,13 @@ public class Config {
     // Assets
     private final Dimension dimension;
     private final BufferedImage icon;
-    private final BufferedImage whitePawn;
-    private final BufferedImage whiteRook;
-    private final BufferedImage whiteKnight;
-    private final BufferedImage whiteBishop;
-    private final BufferedImage whiteQueen;
-    private final BufferedImage whiteKing;
-    private final BufferedImage blackPawn;
-    private final BufferedImage blackRook;
-    private final BufferedImage blackKnight;
-    private final BufferedImage blackBishop;
-    private final BufferedImage blackQueen;
-    private final BufferedImage blackKing;
+
+    private final BufferedImage[] pawn = new BufferedImage[2];
+    private final BufferedImage[] rook = new BufferedImage[2];
+    private final BufferedImage[] knight = new BufferedImage[2];
+    private final BufferedImage[] bishop = new BufferedImage[2];
+    private final BufferedImage[] queen = new BufferedImage[2];
+    private final BufferedImage[] king = new BufferedImage[2];
 
     // Language
     private final String title;
@@ -85,18 +80,18 @@ public class Config {
 
         // Assets
         icon = imageReader.read(config.get("icon").asText());
-        whitePawn = imageReader.read(config.get("whitePawn").asText());
-        whiteRook = imageReader.read(config.get("whiteRook").asText());
-        whiteKnight = imageReader.read(config.get("whiteKnight").asText());
-        whiteBishop = imageReader.read(config.get("whiteBishop").asText());
-        whiteQueen = imageReader.read(config.get("whiteQueen").asText());
-        whiteKing = imageReader.read(config.get("whiteKing").asText());
-        blackPawn = imageReader.read(config.get("blackPawn").asText());
-        blackRook = imageReader.read(config.get("blackRook").asText());
-        blackKnight = imageReader.read(config.get("blackKnight").asText());
-        blackBishop = imageReader.read(config.get("blackBishop").asText());
-        blackQueen = imageReader.read(config.get("blackQueen").asText());
-        blackKing = imageReader.read(config.get("blackKing").asText());
+        pawn[0] = imageReader.read(config.get("whitePawn").asText());
+        rook[0] = imageReader.read(config.get("whiteRook").asText());
+        knight[0] = imageReader.read(config.get("whiteKnight").asText());
+        bishop[0] = imageReader.read(config.get("whiteBishop").asText());
+        queen[0] = imageReader.read(config.get("whiteQueen").asText());
+        king[0] = imageReader.read(config.get("whiteKing").asText());
+        pawn[1] = imageReader.read(config.get("blackPawn").asText());
+        rook[1] = imageReader.read(config.get("blackRook").asText());
+        knight[1] = imageReader.read(config.get("blackKnight").asText());
+        bishop[1] = imageReader.read(config.get("blackBishop").asText());
+        queen[1] = imageReader.read(config.get("blackQueen").asText());
+        king[1] = imageReader.read(config.get("blackKing").asText());
 
         // Language
         JsonNode language = jsonReader.read("/language/" + this.language + ".json");
@@ -144,18 +139,18 @@ public class Config {
 
         // Assets
         icon = imageReader.read(config.get("icon").asText());
-        whitePawn = imageReader.read(config.get("whitePawn").asText());
-        whiteRook = imageReader.read(config.get("whiteRook").asText());
-        whiteKnight = imageReader.read(config.get("whiteKnight").asText());
-        whiteBishop = imageReader.read(config.get("whiteBishop").asText());
-        whiteQueen = imageReader.read(config.get("whiteQueen").asText());
-        whiteKing = imageReader.read(config.get("whiteKing").asText());
-        blackPawn = imageReader.read(config.get("blackPawn").asText());
-        blackRook = imageReader.read(config.get("blackRook").asText());
-        blackKnight = imageReader.read(config.get("blackKnight").asText());
-        blackBishop = imageReader.read(config.get("blackBishop").asText());
-        blackQueen = imageReader.read(config.get("blackQueen").asText());
-        blackKing = imageReader.read(config.get("blackKing").asText());
+        pawn[0] = imageReader.read(config.get("whitePawn").asText());
+        rook[0] = imageReader.read(config.get("whiteRook").asText());
+        knight[0] = imageReader.read(config.get("whiteKnight").asText());
+        bishop[0] = imageReader.read(config.get("whiteBishop").asText());
+        queen[0] = imageReader.read(config.get("whiteQueen").asText());
+        king[0] = imageReader.read(config.get("whiteKing").asText());
+        pawn[1] = imageReader.read(config.get("blackPawn").asText());
+        rook[1] = imageReader.read(config.get("blackRook").asText());
+        knight[1] = imageReader.read(config.get("blackKnight").asText());
+        bishop[1] = imageReader.read(config.get("blackBishop").asText());
+        queen[1] = imageReader.read(config.get("blackQueen").asText());
+        king[1] = imageReader.read(config.get("blackKing").asText());
 
         // Language
         JsonNode language = jsonReader.read(url + "/language/" + this.language + ".json");
@@ -211,52 +206,28 @@ public class Config {
         return icon;
     }
 
-    public BufferedImage getWhitePawn() {
-        return whitePawn;
+    public BufferedImage[] getPawn() {
+        return pawn;
     }
 
-    public BufferedImage getWhiteRook() {
-        return whiteRook;
+    public BufferedImage[] getRook() {
+        return rook;
     }
 
-    public BufferedImage getWhiteKnight() {
-        return whiteKnight;
+    public BufferedImage[] getKnight() {
+        return knight;
     }
 
-    public BufferedImage getWhiteBishop() {
-        return whiteBishop;
+    public BufferedImage[] getBishop() {
+        return bishop;
     }
 
-    public BufferedImage getWhiteQueen() {
-        return whiteQueen;
+    public BufferedImage[] getQueen() {
+        return queen;
     }
 
-    public BufferedImage getWhiteKing() {
-        return whiteKing;
-    }
-
-    public BufferedImage getBlackPawn() {
-        return blackPawn;
-    }
-
-    public BufferedImage getBlackRook() {
-        return blackRook;
-    }
-
-    public BufferedImage getBlackKnight() {
-        return blackKnight;
-    }
-
-    public BufferedImage getBlackBishop() {
-        return blackBishop;
-    }
-
-    public BufferedImage getBlackQueen() {
-        return blackQueen;
-    }
-
-    public BufferedImage getBlackKing() {
-        return blackKing;
+    public BufferedImage[] getKing() {
+        return king;
     }
 
     // Language

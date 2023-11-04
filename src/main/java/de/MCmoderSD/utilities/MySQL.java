@@ -80,7 +80,7 @@ public class MySQL {
             System.err.println(e.getMessage());
         }
 
-        //System.out.println("Data Pulled");
+        //System.out.println("Board Pulled");
         return encodedData;
     }
 
@@ -108,7 +108,7 @@ public class MySQL {
                 insertStatement.close();
 
                 System.out.println("New Game created " + gameID);
-            } else System.out.println("Data Pushed");
+            } else System.out.println("Board Pushed");
 
         } catch (SQLException e) {
             System.err.println(e.getMessage());
