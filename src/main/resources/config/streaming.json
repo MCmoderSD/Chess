@@ -1,0 +1,20 @@
+{
+  "width": 800,
+  "height": 600,
+  "isResizable": false,
+  "icon": "https://raw.githubusercontent.com/MCmoderSD/Chess/master/src/main/resources/Images/icon.png",
+  "whitePawn": "https://raw.githubusercontent.com/MCmoderSD/Chess/master/src/main/resources/Images/white/pawn.png",
+  "whiteRook": "https://raw.githubusercontent.com/MCmoderSD/Chess/master/src/main/resources/Images/white/rook.png",
+  "whiteKnight": "https://raw.githubusercontent.com/MCmoderSD/Chess/master/src/main/resources/Images/white/knight.png",
+  "whiteBishop": "https://raw.githubusercontent.com/MCmoderSD/Chess/master/src/main/resources/Images/white/bishop.png",
+  "whiteQueen": "https://raw.githubusercontent.com/MCmoderSD/Chess/master/src/main/resources/Images/white/queen.png",
+  "whiteKing": "https://raw.githubusercontent.com/MCmoderSD/Chess/master/src/main/resources/Images/white/king.png",
+  "whiteKingChecked": "https://raw.githubusercontent.com/MCmoderSD/Chess/master/src/main/resources/Images/white/kingCheck.png",
+  "blackPawn": "https://raw.githubusercontent.com/MCmoderSD/Chess/master/src/main/resources/Images/black/pawn.png",
+  "blackRook": "https://raw.githubusercontent.com/MCmoderSD/Chess/master/src/main/resources/Images/black/rook.png",
+  "blackKnight": "https://raw.githubusercontent.com/MCmoderSD/Chess/master/src/main/resources/Images/black/knight.png",
+  "blackBishop": "https://raw.githubusercontent.com/MCmoderSD/Chess/master/src/main/resources/Images/black/bishop.png",
+  "blackQueen": "https://raw.githubusercontent.com/MCmoderSD/Chess/master/src/main/resources/Images/black/queen.png",
+  "blackKing": "https://raw.githubusercontent.com/MCmoderSD/Chess/master/src/main/resources/Images/black/king.png",
+  "blackKingChecked": "https://raw.githubusercontent.com/MCmoderSD/Chess/master/src/main/resources/Images/black/kingCheck.png"
+}

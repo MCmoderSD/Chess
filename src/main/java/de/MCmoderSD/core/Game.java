@@ -1,5 +1,6 @@
 package de.MCmoderSD.core;
 
+import de.MCmoderSD.UI.Frame;
 import de.MCmoderSD.main.Config;
 import objects.Piece;
 
@@ -16,11 +17,16 @@ public class Game {
     // Constructor
     public Game(Config config) {
         this.config = config;
+
+        Frame frame = new Frame(config, this);
     }
 
     // Getter
 
     public ArrayList<Piece> getPieces() {
         return pieces;
+    }
+
+    public void buttonClicked(int x, int y) {
     }
 }

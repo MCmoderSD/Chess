@@ -9,7 +9,7 @@ public class Main {
     private static boolean assetStreaming;
 
     public static void main(String[] args) {
-        assetStreaming = Calculate.doesFileExist("/config/default.json.json");
+        assetStreaming = !Calculate.doesFileExist("/config/default.json.json");
 
         if (assetStreaming) new Game(new Config(args));
         else

@@ -34,7 +34,7 @@ public class Config {
     private final BufferedImage[] knight = new BufferedImage[2];
     private final BufferedImage[] bishop = new BufferedImage[2];
     private final BufferedImage[] queen = new BufferedImage[2];
-    private final BufferedImage[] king = new BufferedImage[2];
+    private final BufferedImage[] king = new BufferedImage[4];
 
     // Language
     private final String title;
@@ -54,7 +54,7 @@ public class Config {
 
         // Read Config
         JsonReader jsonReader = new JsonReader();
-        JsonNode database = jsonReader.read("/config/database.json");
+        /*JsonNode database = jsonReader.read("/config/database.json");
 
         // Initialize MySQL Connection
         mySQL = new MySQL(
@@ -67,10 +67,11 @@ public class Config {
                 database.get("table").asText(),
                 gameID);
 
-        mySQL.connect();
+        mySQL.connect();*/
+        mySQL = null;
 
         // Constants
-        JsonNode config = jsonReader.read("/config/default.json.json");
+        JsonNode config = jsonReader.read("/config/default.json");
         width = config.get("width").asInt();
         height = config.get("height").asInt();
         isResizable = config.get("isResizable").asBoolean();
@@ -145,12 +146,14 @@ public class Config {
         bishop[0] = imageReader.read(config.get("whiteBishop").asText());
         queen[0] = imageReader.read(config.get("whiteQueen").asText());
         king[0] = imageReader.read(config.get("whiteKing").asText());
+        king[2] = imageReader.read(config.get("whiteKingCheck").asText());
         pawn[1] = imageReader.read(config.get("blackPawn").asText());
         rook[1] = imageReader.read(config.get("blackRook").asText());
         knight[1] = imageReader.read(config.get("blackKnight").asText());
         bishop[1] = imageReader.read(config.get("blackBishop").asText());
         queen[1] = imageReader.read(config.get("blackQueen").asText());
         king[1] = imageReader.read(config.get("blackKing").asText());
+        king[3] = imageReader.read(config.get("blackKingCheck").asText());
 
         // Language
         JsonNode language = jsonReader.read(url + "/language/" + this.language + ".json");
