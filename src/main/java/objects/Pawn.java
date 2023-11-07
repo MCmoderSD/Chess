@@ -9,12 +9,19 @@ public class Pawn extends Piece {
 
     @Override
     protected boolean canMove(int x, int y) {
-        return false;
+        if (isWhite) {
+            if (y == getY() - 1 && x == getX()) return true;
+            return y == getY() - 2 && x == getX() && getY() == 6;
+        } else {
+            if (y == getY() + 1 && x == getX()) return true;
+            return y == getY() + 2 && x == getX() && getY() == 1;
+        }
     }
 
     @Override
-    public void move(int x, int y) {
+    public boolean move(int x, int y) {
         if (canMove(x, y)) setPosition(x, y);
-        else System.out.println("Invalid move!");
+        else return false;
+        return true;
     }
 }

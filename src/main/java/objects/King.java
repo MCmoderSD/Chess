@@ -9,7 +9,7 @@ public class King extends Piece {
 
     public King(Config config, int x, int y, String type, boolean isWhite) {
         super(x, y, isWhite ? config.getKing()[1] : config.getKing()[0], type, isWhite);
-        check = isWhite ? config.getKing()[3] : config.getKnight()[2];
+        check = isWhite ? config.getKing()[3] : config.getKing()[2];
     }
 
     @Override
@@ -18,9 +18,10 @@ public class King extends Piece {
     }
 
     @Override
-    public void move(int x, int y) {
+    public boolean move(int x, int y) {
         if (canMove(x, y)) setPosition(x, y);
-        else System.out.println("Invalid move!");
+        else return false;
+        return true;
     }
 
     // Getter

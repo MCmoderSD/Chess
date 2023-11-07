@@ -27,7 +27,7 @@ public abstract class Piece {
     // Methods
     protected abstract boolean canMove(int x, int y);
 
-    public abstract void move(int x, int y);
+    public abstract boolean move(int x, int y);
 
 
     // Getters

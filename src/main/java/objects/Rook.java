@@ -13,8 +13,9 @@ public class Rook extends Piece {
     }
 
     @Override
-    public void move(int x, int y) {
+    public boolean move(int x, int y) {
         if (canMove(x, y)) setPosition(x, y);
-        else System.out.println("Invalid move!");
+        else return false;
+        return true;
     }
 }

@@ -4,6 +4,8 @@ import de.MCmoderSD.core.Game;
 import de.MCmoderSD.main.Config;
 import objects.*;
 
+import java.util.ArrayList;
+
 public class Board {
     // Attributes
     private final Piece[][] board;
@@ -65,8 +67,19 @@ public class Board {
         blackRooks[0] = new Rook(config, 0, 7, "Rook", false);
         blackRooks[1] = new Rook(config, 7, 7, "Rook", false);
 
+        // Black bishops
+        blackBishops[0] = new Bishop(config, 2, 7, "Bishop", false);
+        blackBishops[1] = new Bishop(config, 5, 7, "Bishop", false);
 
-        // Assign to Board
+        // Black knights
+        blackKnights[0] = new Knight(config, 1, 7, "Knight", false);
+        blackKnights[1] = new Knight(config, 6, 7, "Knight", false);
+
+        updateBoard();
+    }
+
+    // Methods
+    public void updateBoard() {
         for (Pawn pawn : whitePawns) board[pawn.getY()][pawn.getX()] = pawn;
         for (Rook rook : whiteRooks) board[rook.getY()][rook.getX()] = rook;
         for (Bishop bishop : whiteBishops) board[bishop.getY()][bishop.getX()] = bishop;
@@ -84,5 +97,15 @@ public class Board {
 
     public Piece[][] getBoard() {
         return board;
+    }
+
+    public ArrayList<Piece> getPieces() {
+        ArrayList<Piece> pieces = new ArrayList<>();
+        for (Piece[] piece : board) for (Piece piece1 : piece) if (piece1 != null) pieces.add(piece1);
+        return pieces;
+    }
+
+    public Piece getPiece(int x, int y) {
+        return board[y][x];
     }
 }

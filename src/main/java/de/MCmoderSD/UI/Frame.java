@@ -29,4 +29,9 @@ public class Frame extends JFrame {
         setLocation(Calculate.centerFrame(this));
         setVisible(true);
     }
+
+    // Getter
+    public UI getUi() {
+        return ui;
+    }
 }

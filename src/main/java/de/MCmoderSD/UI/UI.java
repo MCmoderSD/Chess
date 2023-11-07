@@ -56,7 +56,7 @@ public class UI extends JPanel {
                 fields[y][x].setPreferredSize(new Dimension(boardSize / 8, boardSize / 8));
                 fields[y][x].setFocusable(false);
                 fields[y][x].setBorderPainted(false);
-                fields[y][x].setBackground(isWhite ? Color.WHITE : Color.BLACK);
+                fields[y][x].setBackground(isWhite ? new Color(0x5662f6) : new Color(0x36373d));
                 fields[y][x].addActionListener(e -> game.buttonClicked(finalX, finalY));
 
                 board.add(fields[y][x]);
@@ -80,5 +80,15 @@ public class UI extends JPanel {
             else
                 fields[piece.getY()][piece.getX()].setIcon(config.getImageStreamer().createImageIcon(piece.getImage(), fieldSize));
         }
+    }
+
+    public void setPieces(ArrayList<Piece> pieces) {
+        this.pieces.clear();
+        this.pieces.addAll(pieces);
+    }
+
+    // Getter
+    public InputHandler getInputHandler() {
+        return inputHandler;
     }
 }
